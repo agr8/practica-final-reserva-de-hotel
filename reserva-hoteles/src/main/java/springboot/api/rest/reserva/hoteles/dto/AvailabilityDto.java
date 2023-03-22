@@ -1,61 +1,54 @@
-package springboot.api.rest.reserva.hoteles.entity;
+package springboot.api.rest.reserva.hoteles.dto;
 
-import java.time.*;
+import java.time.LocalDate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class AvailabilityDto {
 
-@Entity
-@Table(name = "availabilities")
-public class Availability {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
 	private Integer id;
-	@Column(name = "date")
 	private LocalDate date;
-	@Column(name = "id_hotel")
 	private Integer id_hotel;
-	@Column(name = "rooms")
 	private Integer rooms;
 	
-	
-	public Availability(Integer id, LocalDate date, Integer id_hotel, Integer rooms) {
+	public AvailabilityDto(Integer id, LocalDate date, Integer id_hotel, Integer rooms) {
 		super();
 		this.id = id;
 		this.date = date;
 		this.id_hotel = id_hotel;
 		this.rooms = rooms;
 	}
+
 	public Integer getId() {
 		return id;
 	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
 	public LocalDate getDate() {
 		return date;
 	}
+
 	public void setDate(LocalDate date) {
 		this.date = date;
 	}
+
 	public Integer getId_hotel() {
 		return id_hotel;
 	}
+
 	public void setId_hotel(Integer id_hotel) {
 		this.id_hotel = id_hotel;
 	}
+
 	public Integer getRooms() {
 		return rooms;
 	}
+
 	public void setRooms(Integer rooms) {
 		this.rooms = rooms;
 	}
+	
 	
 	
 }
