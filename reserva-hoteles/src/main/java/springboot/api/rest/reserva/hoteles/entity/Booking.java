@@ -27,6 +27,16 @@ public class Booking {
 	private String email;
 	
 	
+	
+	public Booking(Integer id, Integer id_hotel, LocalDate date_from, LocalDate date_to, String email) {
+		super();
+		this.id = id;
+		this.id_hotel = id_hotel;
+		this.date_from = date_from;
+		this.date_to = date_to;
+		this.email = email;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
