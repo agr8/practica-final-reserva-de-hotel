@@ -21,6 +21,14 @@ public class Hotel {
 	private String category;
 	
 	
+	
+	public Hotel(Integer id, String name, String category) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.category = category;
+	}
+	
 	public Integer getId() {
 		return id;
 	}
