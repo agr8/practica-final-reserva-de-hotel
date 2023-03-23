@@ -1,5 +1,6 @@
 package springboot.api.rest.reserva.hoteles.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -26,6 +27,23 @@ public class HotelServiceImpl implements HotelService {
 	public Hotel consultarHotelporId(Integer id) {
 		
 		return hotelRepository.findById(id).get();
+	}
+
+
+
+	@Override
+	public List<Hotel> listarHoteles() {
+	
+		return hotelRepository.findAll();
+		
+	}
+
+
+
+	@Override
+	public Hotel crearHotel(Hotel nuevoHotel) {
+		return hotelRepository.save(nuevoHotel);
+		
 	}
 
 }
