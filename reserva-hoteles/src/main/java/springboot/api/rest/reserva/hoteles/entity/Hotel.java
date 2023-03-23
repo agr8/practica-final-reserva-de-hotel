@@ -22,6 +22,10 @@ public class Hotel {
 	
 	
 	
+	public Hotel() {
+		super();
+	}
+
 	public Hotel(Integer id, String name, String category) {
 		super();
 		this.id = id;
