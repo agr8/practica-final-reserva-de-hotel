@@ -13,4 +13,6 @@ public interface HotelService  {
 	
 	public Hotel crearHotel(Hotel nuevoHotel);
 
+	public Hotel modificarHotel(Integer idHotel, Hotel hotelModificado);
+
 }

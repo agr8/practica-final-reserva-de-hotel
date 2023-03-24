@@ -15,7 +15,6 @@ public class HotelServiceImpl implements HotelService {
 	private HotelRepository hotelRepository;
 	
 	
-	
 	public HotelServiceImpl(HotelRepository hotelRepository) {
 		super();
 		this.hotelRepository = hotelRepository;
@@ -42,8 +41,17 @@ public class HotelServiceImpl implements HotelService {
 
 	@Override
 	public Hotel crearHotel(Hotel nuevoHotel) {
+		
 		return hotelRepository.save(nuevoHotel);
 		
+	}
+
+
+
+	@Override
+	public Hotel modificarHotel(Integer idHotel, Hotel hotelModificado) {
+		hotelModificado.setId(idHotel);
+		return hotelRepository.save(hotelModificado);
 	}
 
 }
