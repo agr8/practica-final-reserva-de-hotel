@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import springboot.api.rest.reserva.hoteles.dto.HotelDto;
+import springboot.api.rest.reserva.hoteles.dto.HotelsAvailabilityDto;
 import springboot.api.rest.reserva.hoteles.entity.Hotel;
 import springboot.api.rest.reserva.hoteles.mapper.HotelMapper;
+import springboot.api.rest.reserva.hoteles.mapper.HotelsAvailabilityMapper;
 import springboot.api.rest.reserva.hoteles.service.HotelService;
 
 
@@ -43,16 +45,24 @@ public class HotelController {
 	}
 	
 	
+//	@GetMapping( value = "/",produces = MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<Collection<HotelDto>> obtenerListadoHoteles(){
+//				
+//		Collection<HotelDto> hotelesDto = hotelService.listarHoteles().stream()
+//												.map(h->hotelMapper.mapToDto(h)).toList();
+//		
+//		return new ResponseEntity<Collection<HotelDto>>(hotelesDto,HttpStatus.OK);
+//	
+//	}
+	
 	@GetMapping( value = "/",produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Collection<HotelDto>> obtenerListadoHoteles(){
+	public ResponseEntity<Collection<HotelsAvailabilityDto>> obtenerListadoHoteles(){
 				
-		Collection<HotelDto> hotelesDto = hotelService.listarHoteles().stream()
-												.map(h->hotelMapper.mapToDto(h)).toList();
+		Collection<HotelsAvailabilityDto> hotelsAvailabilityDto = hotelService.listarHotelesDTO();
 		
-		return new ResponseEntity<Collection<HotelDto>>(hotelesDto,HttpStatus.OK);
+		return new ResponseEntity<Collection<HotelsAvailabilityDto>>(hotelsAvailabilityDto,HttpStatus.OK);
 	
 	}
-	
 	
 	@PostMapping(value= "/nuevo", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 	public  ResponseEntity<HotelDto> creaHotel(@RequestBody HotelDto hotel) {

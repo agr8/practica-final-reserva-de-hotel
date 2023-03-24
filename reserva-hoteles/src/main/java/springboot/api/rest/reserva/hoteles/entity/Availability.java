@@ -43,6 +43,12 @@ public class Availability {
 		this.rooms = rooms;
 	}
 	
+	public Availability(LocalDate date, Integer id_hotel, Integer rooms) {
+		super();
+		this.date = date;
+		this.id_hotel = id_hotel;
+		this.rooms = rooms;
+	}
 	
 	public Availability() {
 		super();
