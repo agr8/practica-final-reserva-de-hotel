@@ -3,6 +3,8 @@ package springboot.api.rest.reserva.hoteles.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.stereotype.Service;
 
 import springboot.api.rest.reserva.hoteles.entity.Hotel;
@@ -40,6 +42,7 @@ public class HotelServiceImpl implements HotelService {
 
 
 	@Override
+	@Transactional
 	public Hotel crearHotel(Hotel nuevoHotel) {
 		
 		return hotelRepository.save(nuevoHotel);
@@ -49,6 +52,7 @@ public class HotelServiceImpl implements HotelService {
 
 
 	@Override
+	@Transactional
 	public Hotel modificarHotel(Integer idHotel, Hotel hotelModificado) {
 		hotelModificado.setId(idHotel);
 		return hotelRepository.save(hotelModificado);
