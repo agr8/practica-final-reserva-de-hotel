@@ -10,15 +10,16 @@ public class HotelDto {
 	private Integer id;
 	private String name;
 	private String category;
-
+	private List<Availability> availability;
 	
 	
 	
-	public HotelDto(Integer id, String name, String category) {
+	public HotelDto(Integer id, String name, String category, List<Availability> availability) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.category = category;
+		this.availability = availability;
 		
 	}
 
@@ -44,6 +45,14 @@ public class HotelDto {
 
 	public void setCategory(String category) {
 		this.category = category;
+	}
+
+	public List<Availability> getAvailability() {
+		return availability;
+	}
+
+	public void setAvailability(List<Availability> availability) {
+		this.availability = availability;
 	}
 
 

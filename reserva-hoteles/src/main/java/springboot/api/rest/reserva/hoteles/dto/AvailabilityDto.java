@@ -2,6 +2,7 @@ package springboot.api.rest.reserva.hoteles.dto;
 
 import java.time.LocalDate;
 
+
 public class AvailabilityDto {
 
 	private Integer id;
@@ -48,7 +49,6 @@ public class AvailabilityDto {
 	public void setRooms(Integer rooms) {
 		this.rooms = rooms;
 	}
-	
-	
-	
+
+		
 }

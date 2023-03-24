@@ -1,10 +1,14 @@
 package springboot.api.rest.reserva.hoteles.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +24,8 @@ public class Hotel {
 	@Column(name = "category")
 	private String category;
 	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hotel")
+	private List<Availability> hotelsAvailability;
 	
 	
 	public Hotel() {
@@ -51,6 +57,16 @@ public class Hotel {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+
+	public List<Availability> getHotelsAvailability() {
+		return hotelsAvailability;
+	}
+
+	public void setHotelsAvailability(List<Availability> hotelsAvailability) {
+		this.hotelsAvailability = hotelsAvailability;
+	}
+
+	
 	
 	
 	
