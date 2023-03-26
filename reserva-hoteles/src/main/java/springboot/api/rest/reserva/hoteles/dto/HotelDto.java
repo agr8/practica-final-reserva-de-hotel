@@ -1,9 +1,9 @@
 package springboot.api.rest.reserva.hoteles.dto;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import springboot.api.rest.reserva.hoteles.entity.Availability;
+import springboot.api.rest.reserva.hoteles.entity.Booking;
 
 public class HotelDto {
 
@@ -11,15 +11,17 @@ public class HotelDto {
 	private String name;
 	private String category;
 	private List<Availability> availability;
+	private List<Booking> booking;
 	
 	
 	
-	public HotelDto(Integer id, String name, String category, List<Availability> availability) {
+	public HotelDto(Integer id, String name, String category, List<Availability> availability, List<Booking> booking) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.category = category;
 		this.availability = availability;
+		this.booking = booking;
 		
 	}
 
@@ -53,6 +55,14 @@ public class HotelDto {
 
 	public void setAvailability(List<Availability> availability) {
 		this.availability = availability;
+	}
+
+	public List<Booking> getBooking() {
+		return booking;
+	}
+
+	public void setBooking(List<Booking> booking) {
+		this.booking = booking;
 	}
 
 

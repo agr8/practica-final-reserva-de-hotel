@@ -4,20 +4,27 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "bookings")
 public class Booking {
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "id_hotel", nullable = false)
+	private Hotel hotelReservas;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-	@Column(name = "id_hotel")
+	@Column(name = "id_hotel",insertable=false, updatable=false)
 	private Integer id_hotel;
 	@Column(name = "date_from")
 	private LocalDate date_from;
@@ -28,6 +35,10 @@ public class Booking {
 	
 	
 	
+	public Booking() {
+		super();
+	}
+
 	public Booking(Integer id, Integer id_hotel, LocalDate date_from, LocalDate date_to, String email) {
 		super();
 		this.id = id;
@@ -67,7 +78,6 @@ public class Booking {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
+
 
 }

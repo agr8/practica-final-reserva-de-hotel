@@ -8,8 +8,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -28,6 +26,9 @@ public class Hotel {
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hotel")
 	private List<Availability> hotelsAvailability;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "hotelReservas")
+	private List<Booking> hotelsBookings;
 	
 	
 	public Hotel() {
@@ -66,6 +67,14 @@ public class Hotel {
 
 	public void setHotelsAvailability(List<Availability> hotelsAvailability) {
 		this.hotelsAvailability = hotelsAvailability;
+	}
+
+	public List<Booking> getHotelsBookings() {
+		return hotelsBookings;
+	}
+
+	public void setHotelsBookings(List<Booking> hotelsBookings) {
+		this.hotelsBookings = hotelsBookings;
 	}
 
 	

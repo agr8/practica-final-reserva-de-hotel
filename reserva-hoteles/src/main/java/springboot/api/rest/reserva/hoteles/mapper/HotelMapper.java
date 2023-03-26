@@ -10,7 +10,7 @@ public class HotelMapper {
 
 	public HotelDto mapToDto(Hotel hotel) {
 		
-		return new HotelDto(hotel.getId(),hotel.getName(),hotel.getCategory(), hotel.getHotelsAvailability());
+		return new HotelDto(hotel.getId(),hotel.getName(),hotel.getCategory(), hotel.getHotelsAvailability(), hotel.getHotelsBookings());
 		
 	}
 	
