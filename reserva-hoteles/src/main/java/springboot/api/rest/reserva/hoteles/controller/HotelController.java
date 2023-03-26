@@ -45,15 +45,15 @@ public class HotelController {
 	}
 	
 	
-//	@GetMapping( value = "/",produces = MediaType.APPLICATION_JSON_VALUE)
-//	public ResponseEntity<Collection<HotelDto>> obtenerListadoHoteles(){
-//				
-//		Collection<HotelDto> hotelesDto = hotelService.listarHoteles().stream()
-//												.map(h->hotelMapper.mapToDto(h)).toList();
-//		
-//		return new ResponseEntity<Collection<HotelDto>>(hotelesDto,HttpStatus.OK);
-//	
-//	}
+	@GetMapping( value = "/all",produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Collection<HotelDto>> obtenerListadoHotelesDisponibilidadYReservas(){
+				
+		Collection<HotelDto> hotelesDto = hotelService.listarHoteles().stream()
+												.map(h->hotelMapper.mapToDto(h)).toList();
+		
+		return new ResponseEntity<Collection<HotelDto>>(hotelesDto,HttpStatus.OK);
+	
+	}
 	
 	@GetMapping( value = "/",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Collection<HotelsAvailabilityDto>> obtenerListadoHoteles(){
