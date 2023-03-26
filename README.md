@@ -57,4 +57,12 @@ Según la configuración que he establecido en el fichero *application.propertie
 
     * *Recibe por parámetros las fechas, fecha desde la que se quiere consultar la disponibilidad y fecha hasta la que se quiere consultar disponibilidad*
     * *Devuelve la disponibilidad de los hoteles entre esas fechas*
+    
+* **Consultar reserva por su id:**
+   `http://localhost:9000/reservas/2`
+   * *Dado un id, devuelve la información de la reserva correspondiente*
+   
+* **Consultar hotel dado el id de una reserva:**
+  `http://localhost:9000/reservas/hotel/4`
+  * *Devuelve la información completa de un hotel dado el id de una reserva*
 
