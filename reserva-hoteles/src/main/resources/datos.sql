@@ -24,10 +24,9 @@ INSERT INTO public.availabilities("date", id_hotel, rooms) VALUES
 	('15-10-22', 5, 0),
 	('16-10-22', 5, 0);
 	
-/*
+
 INSERT INTO public.bookings(id_hotel, date_from, date_to, email) VALUES
-	(1, ?, ?, 'pepe_48@gmail.com'),
-	(1, ?, ?, 'rosajp@gmail.com'),
-	(2, ?, ?, 'maria6739@gmail.com'),
-	(4, ?, ?, 'cristinaui_98@gmail.com');
-*/
+	(1, '13-10-22','15-10-22', 'pepe_48@gmail.com'),
+	(2,'14-10-22', '15-10-22', 'rosajp@gmail.com'),
+	(3, '13-10-22', '15-10-22', 'maria6739@gmail.com'),
+	(5,'15-10-22' ,'16-10-22', 'cristinaui_98@gmail.com');
