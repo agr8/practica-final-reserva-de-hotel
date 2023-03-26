@@ -24,4 +24,7 @@ public interface HotelRepository extends JpaRepository<Hotel, Integer>,  JpaSpec
 	
 	@Query("FROM Hotel h JOIN FETCH h.hotelsAvailability a where a.date BETWEEN :desde AND :hasta")
 	List<Hotel> findByDatesJoinFetch(LocalDate desde,LocalDate hasta);
+	
+	@Query("FROM Hotel h JOIN FETCH h.hotelsBookings b where b.id=:id")
+	Hotel findByIdJoinFetch(Integer id);
 }
