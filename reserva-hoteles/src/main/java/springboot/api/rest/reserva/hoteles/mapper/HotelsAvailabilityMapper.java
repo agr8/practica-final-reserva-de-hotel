@@ -15,13 +15,8 @@ import springboot.api.rest.reserva.hoteles.entity.Hotel;
 public class HotelsAvailabilityMapper {
 
 
-//	public HotelsAvailabilityDto mapToDto(Hotel hotel, List<Availability> availability) {
-//		
-//		return new HotelsAvailabilityDto(hotel.getId(),hotel.getName(),hotel.getCategory(),
-//											availability);
-//		
-//	}
-//	
+
+	
 	public Hotel mapToHotelEntity(HotelsAvailabilityDto hotelsAvailability) {
 		
 		return new Hotel(hotelsAvailability.getId(),hotelsAvailability.getName(),hotelsAvailability.getCategory());

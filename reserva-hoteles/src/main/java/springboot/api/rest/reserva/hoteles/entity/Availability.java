@@ -27,7 +27,7 @@ public class Availability {
 	private Integer id;
 	@Column(name = "date")
 	private LocalDate date;
-	@Column(name = "id_hotel", insertable = false, updatable = false)
+	@Column(name = "id_hotel", insertable=false, updatable=false)
 	private Integer id_hotel;
 	@Column(name = "rooms")
 	private Integer rooms;
@@ -49,7 +49,12 @@ public class Availability {
 		this.id_hotel = id_hotel;
 		this.rooms = rooms;
 	}
-	
+	public Availability(LocalDate date,  Integer rooms) {
+		super();
+		this.date = date;
+		this.rooms = rooms;
+		
+	}
 	public Availability() {
 		super();
 	}
